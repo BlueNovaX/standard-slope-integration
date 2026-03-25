@@ -22,3 +22,13 @@ Standard‑Slope Integration arises from a simple question: can an integral be d
 - **Full book (83 pages)** — expanded exposition, additional examples, and broader context
   https://www.amazon.com/dp/B0D79VMMZJ
 
+## How to Cite This Work
+If you reference Standard‑Slope Integration in academic or technical writing, please cite the core paper:
+
+Peter James Italia, *Standard‑Slope Integration*, 2026.  
+Available at: https://github.com/BlueNovaX/standard-slope-integration
+
+## License
+This repository is provided without a license. All rights reserved.
+Please contact the author for permission to reuse or distribute any part of this work.
+
