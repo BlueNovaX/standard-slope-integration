@@ -23,6 +23,10 @@ Standard‑Slope Integration arises from a simple question: can an integral be d
 
   https://www.amazon.com/dp/B0D79VMMZJ
 
+- **GitHub Pages site (Standard-Slope Integration):**
+
+  https://bluenovax.github.io/standard-slope-integration/
+
 - **Mastodon announcement (Standard‑Slope Integration):**
 
   https://mathstodon.xyz/@BlueNovaX/116387178823654151
