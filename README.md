@@ -20,9 +20,11 @@ Standard‑Slope Integration arises from a simple question: can an integral be d
 
 ## Links
 - **Full book (83 pages)** — expanded exposition, additional examples, and broader context
+
   https://www.amazon.com/dp/B0D79VMMZJ
 
 - **Mastodon announcement (Standard‑Slope Integration):**
+
   https://mathstodon.xyz/@BlueNovaX/116387178823654151
 
 ## How to Cite This Work
