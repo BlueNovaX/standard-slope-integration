@@ -1,3 +1,5 @@
+<meta name="msvalidate.01" content="C8514E28F8E46892F32989D58937F5F2" />
+
 # Standard-Slope Integration (SSI)
 
 A new, first-of-its-kind class of derivative-driven integration operators based solely on the slope.
