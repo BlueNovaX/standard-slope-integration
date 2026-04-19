@@ -1,4 +1,7 @@
-<meta name="msvalidate.01" content="C8514E28F8E46892F32989D58937F5F2" />
+---
+layout: default
+title: Standard-Slope Integration (SSI)
+---
 
 # Standard-Slope Integration (SSI)
 
