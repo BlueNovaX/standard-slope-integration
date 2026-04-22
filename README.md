@@ -48,6 +48,7 @@ Fully worked numerical examples of SSI are presented in the core paper. These ex
 ## Links
 
 - **Full book (83 pages)** — expanded exposition, additional examples, and broader context
+
   https://www.amazon.com/dp/B0D79VMMZJ
 
 - **GitHub Pages site (Standard Slope Integration):**
