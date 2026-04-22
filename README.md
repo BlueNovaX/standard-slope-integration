@@ -1,29 +1,56 @@
 <h1 align="center">Standard‑Slope Integration</h1>
 
-A new, slope‑based framework for defining integrals without antiderivatives.
+A slope‑based integration operator that defines integrals without antiderivatives.
 
-## Overview
-Standard‑Slope Integration is a new way to define integrals directly from slopes, without relying on antiderivatives or other traditional techniques. It gives a simple way to describe integration, even when the function is irregular or not smooth. The method avoids several classical complications and provides a single, unified way to link differentiation and integration.
+## Introduction
 
-This repository contains the 19-page core paper introducing Standard-Slope Integration and its main ideas.
+This repository presents Standard Slope Integration (SSI), a single pass numerical integration operator based on slope driven reconstruction. It provides the reference implementation, supporting materials, and the core paper describing the method. The goal is to offer a clear, accessible introduction to the operator while keeping the implementation simple and easy to explore. No specific application is assumed; SSI is presented as a general purpose tool.
 
-## Why this method?
-Standard‑Slope Integration arises from a simple question: can an integral be defined directly from the slope rather than an antiderivative? Classical methods each have limitations that make them unusable for some functions. The slope‑based approach helps avoid these limitations and is useful when:
+## Definition
 
-- antiderivatives are difficult or impossible to obtain
-- the slope is easier to work with than the function itself
-- the function is irregular or not smooth
-- a simpler alternative to classical techniques is needed
+Standard Slope Integration (SSI) is a new numerical integration operator that computes values using only slope information. It is a derivative driven integration method built on structural iteration invariants and a slope based reconstruction step, allowing each partition to be evaluated in a single pass. SSI is designed as a general purpose operator with predictable performance, numerical stability, computational efficiency, and high accuracy across a wide range of applications.
 
-## Contents
-- **SSI-core-paper.pdf** — core paper introducing Standard‑Slope Integration
+## Motivation
+
+Classical integration methods often depend on antiderivatives, repeated refinement, or multi stage correction schemes. Antiderivatives may be difficult or impossible to obtain, and refinement based methods often require multiple passes, adaptive control, or additional stability mechanisms. SSI was developed as a structurally constrained, slope driven alternative that reconstructs values in a single pass. Its design offers predictable performance, numerical stability, and computational efficiency across a wide range of applications.
+
+## Conceptual Overview
+
+SSI operates on slope data derived from each partition over the interval. Each partition contributes a slope based estimate, and the final value is obtained by summing each of these contributions. The method does not rely on antiderivatives (classical calculus), iterative refinement (adaptive quadrature), or correction loops (predictor–corrector schemes). Its single pass structure is computationally efficient and well suited to both general numerical use and resource constrained environments.
+
+## Minimal Example
+
+Consider an interval divided into two partitions. SSI uses the slope data from the first partition to produce a slope based estimate, and then does the same for the second. The final value is obtained by summing the two estimates. Because the slope information is structurally constraining, each partition requires only one pass.
+
+## Algorithmic Structure
+
+SSI evaluates each partition independently using a slope based reconstruction step derived from structural iteration invariants. The operator processes the slope information once per partition, produces a single estimate for that partition, and accumulates the results. No refinement cycles, feedback loops, or multi stage corrections are required. This structure yields predictable performance and numerically stable behavior across a wide range of applications.
+
+## Documentation
+
+This repository includes the core SSI paper, which provides the full theoretical development of the method. Additional examples and supporting materials are included in the accompanying files.
+
+## Usage
+
+The reference implementation provides a simple interface for applying SSI to slope data associated with each partition of the interval. Users supply slope values and partition information, run the reconstruction step on each partition, and sum the results. Step by step demonstrations of this workflow are provided in the “Numerical Examples” section of the core paper.
+
+## Examples
+
+Fully worked numerical examples of SSI are presented in the core paper. These examples walk through the complete process: obtaining derivative information, selecting values of *x* and *y*, computing endpoint slopes on a partition, determining the standard slope, and applying the SSI equation to obtain the resulting estimate. Readers interested in step‑by‑step numerical illustrations should refer to the “Numerical Examples” section of the core paper.
+
+## Repository Map
+
+/src       — Reference implementation of the SSI operator
+
+/docs
+    [SSI-core-paper.pdf](docs/SSI-core-paper.pdf) — Core paper introducing Standard‑Slope Integration
 
 ## Links
-- **Full book (83 pages)** — expanded exposition, additional examples, and broader context
 
+- **Full book (83 pages)** — expanded exposition, additional examples, and broader context
   https://www.amazon.com/dp/B0D79VMMZJ
 
-- **GitHub Pages site (Standard-Slope Integration):**
+- **GitHub Pages site (Standard Slope Integration):**
 
   https://bluenovax.github.io/standard-slope-integration/
 
@@ -32,12 +59,16 @@ Standard‑Slope Integration arises from a simple question: can an integral be d
   https://mathstodon.xyz/@BlueNovaX/116387178823654151
 
 ## How to Cite This Work
+
 If you reference Standard‑Slope Integration in academic or technical writing, please cite the core paper:
 
-Peter James Italia, *Standard‑Slope Integration*, 2026.  
+Peter James Italia, *Standard‑Slope Integration*, 2026.
 Available at: https://github.com/BlueNovaX/standard-slope-integration
 
 ## License
-This repository is provided without a license. All rights reserved.
-Please contact the author for permission to reuse or distribute any part of this work.
 
+All rights reserved. No license is granted. Please contact the author for permission to reuse or distribute any part of this work.
+
+## Closing Notes
+
+This repository provides the reference implementation and supporting materials for Standard-Slope Integration (SSI). The method is presented as a general purpose operator; no specific application is assumed. Future updates may refine documentation or add additional examples as needed.
