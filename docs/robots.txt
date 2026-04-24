@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bluenovax.github.io/standard-slope-integration/sitemap.xml
