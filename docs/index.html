@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="msvalidate.01" content="C8514E28F8E46892F32989D58937F5F2" />
   <link rel="canonical" href="https://bluenovax.github.io/standard-slope-integration/" />
-  <meta name="description" content="Standard‑Slope Integration (SSI): First of its kind in a new class of derivative‑driven integration operators built on structural iteration invariants and slope‑based reconstruction.">
+  <meta name="description" content="Standard-Slope Integration (SSI) is a numerical method for stable, high-precision integration of slope-defined systems.">
   <title>Standard‑Slope Integration (SSI)</title>
 
   <!-- Basic SEO -->
@@ -88,6 +88,20 @@
   </style>
 </head>
 <body>
+<h1>Standard-Slope Integration (SSI)</h1>
+
+<p>
+Standard-Slope Integration (SSI) is a numerical framework designed to integrate slope‑defined systems with high stability, predictable error behavior, and transparent analytical structure. The method replaces conventional step‑based integration with a formulation that treats slope information as the primary object of computation, allowing the system’s geometry to guide the evolution of the solution.
+</p>
+
+<p>
+Unlike classical integrators that accumulate local truncation error at each step, SSI constructs a globally coherent representation of the underlying slope field. This produces solutions that remain stable under refinement, exhibit consistent convergence properties, and preserve qualitative features of the system even in stiff or irregular regimes.
+</p>
+
+<p>
+The project provides a clear formulation of the SSI method, its mathematical motivation, and its practical implementation. Additional materials, examples, and source code are available in the accompanying repository and related documentation.
+</p>
+
   <main class="page">
     <h1>Standard‑Slope Integration (SSI)</h1>
     <p class="tagline">
@@ -109,5 +123,12 @@
       <a class="subtle" href="https://github.com/BlueNovaX/standard-slope-integration#readme">Go directly to the README</a>
     </p>
   </main>
+<footer style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.75;">
+  <p>
+    Standard-Slope Integration (SSI) is an open numerical framework for slope-defined systems.
+    For source code and documentation, visit the 
+    <a href="https://github.com/BlueNovaX/standard-slope-integration">project repository</a>.
+  </p>
+</footer>
 </body>
 </html>
