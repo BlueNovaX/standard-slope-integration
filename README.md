@@ -70,6 +70,32 @@ If you reference Standard‑Slope Integration in academic or technical writing, 
 Peter James Italia, *Standard‑Slope Integration*, 2026.
 Available at: https://github.com/BlueNovaX/standard-slope-integration
 
+## FAQ
+
+### What is Standard‑Slope Integration (SSI)?
+Standard‑Slope Integration (SSI) is an integration operator defined by a reconstruction rule that uses local slope information and structural iteration invariants to recover a function from its derivative data.
+
+### How is SSI different from classical integration?
+Classical integration accumulates area under a curve. SSI instead reconstructs a function directly from slope data using a structural rule, making it a first‑of‑its‑kind operator distinct from integral‑based formulations.
+
+### Is SSI a numerical method or an analytic operator?
+It is an analytic operator with a clear reconstruction rule. Numerical implementations follow naturally, but the method is defined independently of discretization.
+
+### What problem does SSI address?
+SSI provides a principled way to reconstruct a function from its derivative when classical integral formulations are not the natural or most transparent representation of the underlying structure.
+
+### Does SSI assume smoothness or special regularity?
+SSI is defined at the operator level and does not require assumptions beyond those needed to interpret slope information. Specific regularity conditions depend on the application context.
+
+### Where can I find examples or demonstrations?
+Examples and demonstrations are included in this repository and may expand as SSI is applied to additional problems and domains.
+
+### Is SSI intended to replace classical integration?
+No. SSI is an alternative operator with different structural properties. It can be used in general settings, but it is most useful when the derivative is the most logical starting point — a situation that occurs frequently in applied mathematics, modeling, and scientific computing. This includes cases where the slope is simpler or more fundamental than the function, where the antiderivative is difficult or impossible to obtain, or where area based methods introduce unnecessary complexity or error. SSI provides a direct, stable reconstruction from slope information without relying on classical techniques.
+
+### How should SSI be cited?
+A formal preprint or paper will be provided for citation once available. Until then, you may cite this repository as the canonical technical source. For a comprehensive exposition of the method, the complete SSI monograph (available in print) may also be cited as a detailed reference. Additional citation details are provided in the “How to Cite This Work” section of this repository.
+
 ## License
 
 All rights reserved. No license is granted. Please contact the author for permission to reuse or distribute any part of this work.
