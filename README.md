@@ -1,7 +1,5 @@
 <h1 align="center">Standard‑Slope Integration</h1>
 
-# Standard‑Slope Integration (SSI)
-
 A new, first‑of‑its‑kind class of derivative‑driven integration operators based solely on the slope.
 
 **Standard‑Slope Integration (SSI) is a first‑of‑its‑kind, derivative‑driven integration operator that reconstructs functions from slope information using structural iteration invariants.**
