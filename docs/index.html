@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="msvalidate.01" content="C8514E28F8E46892F32989D58937F5F2" />
   <link rel="canonical" href="https://bluenovax.github.io/standard-slope-integration/" />
-  <meta name="description" content="Standard-Slope Integration (SSI) is a numerical method for stable, high-precision integration of slope-defined systems.">
+  <meta name="description" content="Standard‑Slope Integration (SSI) is a numerical method for stable, derivative‑driven integration of slope‑defined systems with predictable error behavior.">
   <title>Standard‑Slope Integration (SSI)</title>
 
   <!-- Basic SEO -->
@@ -95,15 +95,15 @@ body {
     <h1>Standard-Slope Integration (SSI)</h1>
 
     <p>
-      Standard-Slope Integration (SSI) is a numerical framework designed to integrate slope‑defined systems with high stability, predictable error behavior, and transparent analytical structure. The method replaces conventional step‑based integration with a formulation that treats slope information as the primary object of computation, allowing the system’s geometry to guide the evolution of the solution.
+      <strong>Standard‑Slope Integration (SSI)</strong> is a numerical integration framework that operates directly on <strong>slope‑defined systems</strong>, using derivative information as the primary computational object. Instead of advancing a solution through <strong>step‑based accumulation</strong>, SSI reconstructs system behavior through <em>slope‑based reconstruction</em> and <em>structural iteration invariants</em>, producing a <strong>stable, derivative‑driven integration operator</strong> with predictable and analytically transparent behavior.
     </p>
 
     <p>
-      Unlike classical integrators that accumulate local truncation error at each step, SSI constructs a globally coherent representation of the underlying slope field. This produces solutions that remain stable under refinement, exhibit consistent convergence properties, and preserve qualitative features of the system even in stiff or irregular regimes.
+      Classical integrators accumulate local truncation error at each step, and their stability depends on step size, conditioning, and error‑control heuristics. SSI avoids this step‑accumulation model entirely. By constructing a <strong>globally coherent representation of the underlying slope field</strong>, the method remains stable as the representation is refined—thus, increasing resolution improves accuracy without introducing the instability, drift, or error amplification that classical <strong>step‑based methods</strong> exhibit under small step sizes. As a result, SSI preserves qualitative system behavior even in regimes that are stiff, irregular, or structurally incompatible with traditional integrators.
     </p>
 
     <p>
-      The project provides a clear formulation of the SSI method, its mathematical motivation, and its practical implementation. Additional materials, examples, and source code are available in the accompanying repository and related documentation.
+      This project presents the mathematical formulation of SSI, its motivation as a <strong>new class of derivative‑driven integration operators</strong>, and its practical implementation. Additional examples, analysis, and source code are provided in the accompanying repository and documentation.
     </p>
 
     <!-- ORIGINAL CONTENT (unchanged, now below intro) -->
