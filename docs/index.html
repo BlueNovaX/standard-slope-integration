@@ -99,7 +99,7 @@ body {
     </p>
 
     <p>
-      Classical integrators accumulate local truncation error at each step, and their stability depends on step size, conditioning, and error‑control heuristics. SSI avoids this step‑accumulation model entirely. By constructing a <strong>globally coherent representation of the underlying slope field</strong>, the method remains stable as the representation is refined—thus, increasing resolution improves accuracy without introducing the instability, drift, or error amplification that classical <strong>step‑based methods</strong> exhibit under small step sizes. As a result, SSI preserves qualitative system behavior even in regimes that are stiff, irregular, or structurally incompatible with traditional integrators.
+      Classical integrators accumulate local truncation error at each step, and their stability depends on step size, conditioning, and error‑control heuristics. SSI avoids this step‑accumulation model entirely. By constructing a <strong>globally coherent representation of the slope field</strong>, the method remains stable under refinement—thus, increasing resolution improves accuracy without the instability or drift seen in classical <strong>step‑based methods</strong>, even in stiff or irregular regimes.
     </p>
 
     <p>
