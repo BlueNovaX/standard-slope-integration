@@ -8,39 +8,41 @@ Standard‑Slope Integration (SSI) is a first‑of‑its‑kind, derivative‑dr
 
 ## Introduction
 
-This repository presents Standard Slope Integration (SSI), a single pass numerical integration operator based on slope driven reconstruction. It provides the reference implementation, supporting materials, and the core paper describing the method. The goal is to offer a clear, accessible introduction to the operator while keeping the implementation simple and easy to explore. No specific application is assumed; SSI is presented as a general purpose tool.
+This repository presents Standard-Slope Integration (SSI), a single-pass numerical integration operator based on slope-driven reconstruction. It provides the reference implementation, supporting materials, and the core paper describing the method. The goal is to offer a clear, accessible introduction to the operator while keeping the implementation simple and easy to explore. No specific application is assumed; SSI is presented as a general-purpose tool.
 
 ## Definition
 
-Standard Slope Integration (SSI) is a new numerical integration operator that computes values using only slope information. It is a derivative driven integration method built on structural iteration invariants and a slope based reconstruction step, allowing each partition to be evaluated in a single pass. SSI is designed as a general purpose operator with predictable performance, numerical stability, computational efficiency, and high accuracy across a wide range of applications.
+Standard-Slope Integration (SSI) is a new numerical integration operator that computes each partition’s contribution to the integral using slope information as its primary input. It is a derivative-driven integration method built on structural iteration invariants and a slope-based reconstruction step, allowing each partition to be evaluated in a single pass. SSI is designed as a general-purpose operator with predictable performance, numerical stability, computational efficiency, and high accuracy across a wide range of applications.
 
 ## Motivation
 
-Classical integration methods often depend on antiderivatives, repeated refinement, or multi stage correction schemes. Antiderivatives may be difficult or impossible to obtain, and refinement based methods often require multiple passes, adaptive control, or additional stability mechanisms. SSI was developed as a structurally constrained, slope driven alternative that reconstructs values in a single pass. Its design offers predictable performance, numerical stability, and computational efficiency across a wide range of applications.
+Classical integration methods often depend on antiderivatives, repeated refinement, or multi-stage correction schemes. Antiderivatives may be difficult or impossible to obtain, and refinement-based methods often require multiple passes, adaptive control, or additional stability mechanisms. SSI was developed as a structurally constrained, slope-driven alternative that reconstructs values in a single pass. Its design offers predictable performance, numerical stability, and computational efficiency across a wide range of applications.
 
 ## Conceptual Overview
 
-SSI operates on slope data derived from each partition over the interval. Each partition contributes a slope based estimate, and the final value is obtained by summing each of these contributions. The method does not rely on antiderivatives (classical calculus), iterative refinement (adaptive quadrature), or correction loops (predictor–corrector schemes). Its single pass structure is computationally efficient and well suited to both general numerical use and resource constrained environments.
+SSI operates on slope data derived from each partition over the interval. Each partition contributes an area estimate reconstructed from its slope information, and the final integral is obtained by summing these contributions. Instead of defining the integral through explicit area‑accumulation formulas (rectangles, trapezoids, quadrature weights), SSI reconstructs the area contribution using a slope‑driven structural rule applied once per partition.
+
+The method does not rely on antiderivatives (classical calculus), iterative refinement (adaptive quadrature), or correction loops (predictor–corrector schemes). Its single-pass structure is computationally efficient and well suited to both general numerical use and resource-constrained environments.
 
 ## Minimal Example
 
-Consider an interval divided into two partitions. SSI uses the slope data from the first partition to produce a slope based estimate, and then does the same for the second. The final value is obtained by summing the two estimates. Because the slope information is structurally constraining, each partition requires only one pass.
+Consider an interval divided into two partitions. SSI uses the slope data from the first partition to produce a slope-based estimate, and then does the same for the second. The final value is obtained by summing the two estimates. Because the slope information determines the reconstruction rule, each partition requires only one pass.
 
 ## Algorithmic Structure
 
-SSI evaluates each partition independently using a slope based reconstruction step derived from structural iteration invariants. The operator processes the slope information once per partition, produces a single estimate for that partition, and accumulates the results. No refinement cycles, feedback loops, or multi stage corrections are required. This structure yields predictable performance and numerically stable behavior across a wide range of applications.
+SSI evaluates each partition independently using a slope-based reconstruction step derived from structural iteration invariants. The operator processes the slope information once per partition, produces a single estimate for that partition, and accumulates the results. No refinement cycles, feedback loops, or multi-stage corrections are required. This structure yields predictable performance and numerically stable behavior across a wide range of applications.
 
 ## Documentation
 
-This repository includes the core SSI paper, which provides the full theoretical development of the method. Additional examples and supporting materials are included in the accompanying files.
+This repository includes the core SSI paper, which provides the complete theoretical development of the method. Additional examples and supporting materials are included in the repository files.
 
 ## Usage
 
-The reference implementation provides a simple interface for applying SSI to slope data associated with each partition of the interval. Users supply slope values and partition information, run the reconstruction step on each partition, and sum the results. Step by step demonstrations of this workflow are provided in the “Numerical Examples” section of the core paper.
+The reference implementation provides a simple interface for applying SSI to slope data for each partition of the interval. Users supply slope values and partition information, apply the reconstruction step on each partition, and sum the results. Step-by-step demonstrations of this workflow are presented in the “Numerical Examples” section of the core paper.
 
 ## Examples
 
-Fully worked numerical examples of SSI are presented in the core paper. These examples walk through the complete process: obtaining derivative information, selecting values of *x* and *y*, computing endpoint slopes on a partition, determining the standard slope, and applying the SSI equation to obtain the resulting estimate. Readers interested in step‑by‑step numerical illustrations should refer to the “Numerical Examples” section of the core paper.
+Fully worked numerical examples of SSI are presented in the core paper. These examples illustrate the complete workflow and show how the slope-based reconstruction produces each partition’s contribution to the integral. Readers seeking detailed numerical illustrations should refer to the “Numerical Examples” section of the core paper.
 
 ## Repository Map
 
@@ -76,22 +78,22 @@ Available at: https://github.com/BlueNovaX/standard-slope-integration
 Standard‑Slope Integration (SSI) is an integration operator defined by a reconstruction rule that uses local slope information and structural iteration invariants to recover a function from its derivative data.
 
 ### How is SSI different from classical integration?
-Classical integration accumulates area under a curve. SSI instead reconstructs a function directly from slope data using a structural rule, making it a first‑of‑its‑kind operator distinct from integral‑based formulations.
+Classical integration defines the integral through explicit area-accumulation formulas (rectangles, trapezoids, polynomial fits, quadrature weights). SSI computes the area contribution of each partition using a slope-driven structural rule rather than geometric approximation. This makes SSI a first‑of‑its‑kind operator. And because the mechanism is different, the numerical results are not the same: SSI typically produces more accurate estimates in a single pass.
 
 ### Is SSI a numerical method or an analytic operator?
 It is an analytic operator with a clear reconstruction rule. Numerical implementations follow naturally, but the method is defined independently of discretization.
 
 ### What problem does SSI address?
-SSI provides a principled way to reconstruct a function from its derivative when classical integral formulations are not the natural or most transparent representation of the underlying structure.
+SSI provides a principled way to reconstruct a function from its derivative when classical area‑based formulations are not the most natural or transparent representation of the underlying structure. It offers a direct slope‑driven reconstruction that avoids the geometric approximations used in traditional numerical integration.
 
 ### Does SSI assume smoothness or special regularity?
 SSI is defined at the operator level and does not require assumptions beyond those needed to interpret slope information. Specific regularity conditions depend on the application context.
 
 ### Where can I find examples or demonstrations?
-Examples and demonstrations are included in this repository and may expand as SSI is applied to additional problems and domains.
+Examples and demonstrations are included in this repository and may be expanded as SSI is applied to additional problems and domains.
 
 ### Is SSI intended to replace classical integration?
-No. SSI is an alternative operator with different structural properties. It can be used in general settings, but it is most useful when the derivative is the most logical starting point — a situation that occurs frequently in applied mathematics, modeling, and scientific computing. This includes cases where the slope is simpler or more fundamental than the function, where the antiderivative is difficult or impossible to obtain, or where area based methods introduce unnecessary complexity or error. SSI provides a direct, stable reconstruction from slope information without relying on classical techniques.
+No. SSI is an alternative operator with different structural properties. It computes the area contribution of each partition using a slope‑driven structural rule rather than geometric approximation. Because the mechanism is different, the numerical results are not the same: SSI typically produces more accurate estimates in a single pass. SSI is most useful when the derivative is the most natural starting point — for example, when the slope is simpler or more fundamental than the function, when antiderivatives are difficult or impossible to obtain, or when classical area‑based methods introduce unnecessary complexity or error.
 
 ### How should SSI be cited?
 A formal preprint or paper will be provided for citation once available. Until then, you may cite this repository as the canonical technical source. For a comprehensive exposition of the method, the complete SSI monograph (available in print) may also be cited as a detailed reference. Additional citation details are provided in the “How to Cite This Work” section of this repository.
@@ -102,4 +104,4 @@ All rights reserved. No license is granted. Please contact the author for permis
 
 ## Closing Notes
 
-This repository provides the reference implementation and supporting materials for Standard-Slope Integration (SSI). The method is presented as a general purpose operator; no specific application is assumed. Future updates may refine documentation or add additional examples as needed.
+This repository provides the reference implementation and supporting materials for Standard-Slope Integration (SSI). The method is presented as a general-purpose operator with no specific application assumed. Future updates may refine the documentation or add examples as SSI is applied to additional problems and domains.
