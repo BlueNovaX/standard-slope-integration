@@ -3,9 +3,11 @@
 Standard-Slope Integration (SSI) introduces a new class of numerical operator for slope-defined systems. Instead of advancing a trajectory through incremental steps, SSI reconstructs system behavior directly from derivative information. This eliminates the cumulative floating-point drift that affects traditional integrators such as RK4, RKF45, and symplectic methods.
 
 **Why SSI Matters**
+
 Step-based numerical methods accumulate error as trajectories grow longer. SSI does not. It maintains exact radius closure, exact endpoint closure, zero angle drift, and area preservation at the 10⁻²¹ level—approximately one hundred million times more accurate than RKF45 under the same unit-circle test conditions.
 
 **Long-Duration Stability**
+
 Tests over 10, 20, 30, and 40 revolutions show that SSI maintains invariant-level stability across all geometric metrics:
 
 - Radius error: 0
@@ -23,6 +25,7 @@ RKF45 performs well for a step-based method but exhibits the expected cumulative
 RKF45 was evaluated in its standard fixed-step configuration. Adaptive step sizing was intentionally not used, as adaptive RKF45 reduces local truncation error but cannot prevent the global geometric drift—radius contraction, area loss, position drift, and angle bias—that step-based integrators inherently accumulate.
 
 **Practical Applications and Broader Significance**
+
 SSI behaves differently from traditional numerical methods because it operates in a structurally stable computational regime. Its slope-defined reconstruction avoids the drift and cumulative error inherent to step-based propagation, making it not only a subject of research interest but a practical numerical tool.
 
 SSI is simple to implement, easy to apply, and highly accurate across a wide range of systems—geometric, physical, dynamical, and analytical. Beyond long-duration trajectory monitoring, SSI is directly useful for any application requiring stable integration, invariant preservation, or high-fidelity reconstruction from derivative information.
