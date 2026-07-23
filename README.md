@@ -42,12 +42,12 @@ A new long duration accuracy comparison between SSI and RKF45 is now available. 
 **Summary Report (PDF):**
 
 /docs
-    [SSI-RKF-Error-Metrics.pdf](docs/SSI-RKF-Error-Metrics.pdf) — Summary report comparing SSI and RKF45 error behavior
+    [SSI-RKF45-Error-Metrics.pdf](docs/SSI-RKF45-Error-Metrics.pdf) — Summary report comparing SSI and RKF45 error behavior
 
 **Supplemental Comparison README:**
 
 /docs
-    [SSI-RKF-Comparison-README.md](docs/SSI-RKF-Comparison-README.md) — Supplemental analysis and extended discussion
+    [SSI-RKF45-Comparison-README.md](docs/SSI-RKF45-Comparison-README.md) — Supplemental analysis and extended discussion
 
 This document provides a concise, data driven comparison demonstrating SSI’s structurally stable behavior and its practical advantages over classical step based integrators.
 
@@ -67,10 +67,10 @@ Fully worked numerical examples of SSI are presented in the core paper. These ex
     [SSI-core-paper.pdf](docs/SSI-core-paper.pdf) — Core paper introducing Standard‑Slope Integration
 
 /docs
-    [SSI-RKF-Error-Metrics.pdf](docs/SSI-RKF-Error-Metrics.pdf) — Summary report comparing SSI and RKF45 error behavior
+    [SSI-RKF45-Error-Metrics.pdf](docs/SSI-RKF45-Error-Metrics.pdf) — Summary report comparing SSI and RKF45 error behavior
 
 /docs
-    [SSI-RKF-Comparison-README.md](docs/SSI-RKF-Comparison_README.md) — Supplemental analysis and extended discussion
+    [SSI-RKF45-Comparison-README.md](docs/SSI-RKF45-Comparison-README.md) — Supplemental analysis and extended discussion
 
 ## Links
 
