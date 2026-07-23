@@ -34,7 +34,22 @@ SSI evaluates each partition independently using a slope-based reconstruction st
 
 ## Documentation
 
-This repository includes the core SSI paper, which provides the complete theoretical development of the method. Additional examples and supporting materials are included in the repository files.
+This repository includes the core SSI paper, which provides the complete theoretical development of the method. Additional examples and supporting materials are included in the repository files. A new SSI vs RKF45 comparison module is also available, including a summary report (PDF) and a supplemental comparison README.
+
+## SSI vs RKF45 — Error Metrics Comparison
+A new long duration accuracy comparison between SSI and RKF45 is now available. This report evaluates radius error, position error, area preservation, and angle drift over 10, 20, 30, and 40 full revolutions of circular motion. The results show SSI maintaining invariant level stability (radius, position, angle drift all exactly zero; area error ~10⁻²¹), while RKF45 exhibits the expected cumulative geometric drift inherent to step based propagation.
+
+**Summary Report (PDF):**
+
+/docs
+    [SSI-RKF-Error-Metrics.pdf](docs/SSI-RKF-Error-Metrics.pdf) — Summary report comparing SSI and RKF45 error behavior
+
+**Supplemental Comparison README:**
+
+/docs
+    [SSI-RKF-Comparison-README.md](docs/SSI-RKF-Comparison-README.md) — Supplemental analysis and extended discussion
+
+This document provides a concise, data driven comparison demonstrating SSI’s structurally stable behavior and its practical advantages over classical step based integrators.
 
 ## Usage
 
@@ -50,6 +65,12 @@ Fully worked numerical examples of SSI are presented in the core paper. These ex
 
 /docs
     [SSI-core-paper.pdf](docs/SSI-core-paper.pdf) — Core paper introducing Standard‑Slope Integration
+
+/docs
+    [SSI-RKF-Error-Metrics.pdf](docs/SSI-RKF-Error-Metrics.pdf) — Summary report comparing SSI and RKF45 error behavior
+
+/docs
+    [SSI-RKF-Comparison-README.md](docs/SSI-RKF-Comparison_README.md) — Supplemental analysis and extended discussion
 
 ## Links
 
