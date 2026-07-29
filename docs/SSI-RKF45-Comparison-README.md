@@ -1,4 +1,4 @@
-**Standard-Slope Integration (SSI): A Structurally Stable Alternative to Step-Based Numerical Methods**
+<h1 align="center">SSI vs RKF45: A Stability and Accuracy Comparison</h1>
 
 Standard-Slope Integration (SSI) introduces a new class of numerical operator for slope-defined systems. Instead of advancing a trajectory through incremental steps, SSI reconstructs system behavior directly from derivative information. This eliminates the cumulative floating-point drift that affects traditional integrators such as RK4, RKF45, and symplectic methods.
 
